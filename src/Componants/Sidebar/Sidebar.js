@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./sidebar.scss";
+import { Link, useLocation, useNavigation } from "react-router-dom";
+import  profile  from "../Images/Profile.jpeg"
+import gsap from "gsap";
 
 const Sidebar = () => {
+  const navigate = useNavigation();
+  let location = useLocation();
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.set(".content", { overflow: "hidden" })
+      .fromTo(
+        ".content",
+        { opacity: 0, x: 300 },
+        { opacity: 1, x: 0, duration: 1 }
+      )
+      .set(".content", { overflow: "visible" });
+  }, [location]);
   return (
     <div>
       <nav id="nav-bar">
         <input id="nav-toggle" type="checkbox" />
         <div id="nav-header">
-          <a id="nav-title" href="https://codepen.io" target="_blank">
-            C#<i class="fab fa-codepen"></i>DEPEN
+          <a id="nav-title" href="#" target="_blank">
+            Aryan Dantani
           </a>
           <label for="nav-toggle">
             <span id="nav-toggle-burger"></span>
@@ -18,11 +33,20 @@ const Sidebar = () => {
         <div id="nav-content">
           <div class="nav-button">
             <i class="fas fa-palette"></i>
-            <span>Your Work</span>
+            <span>
+              <Link to="/" component="span">
+                Your Work
+              </Link>
+            </span>
           </div>
           <div class="nav-button">
             <i class="fas fa-images"></i>
-            <span>Assets</span>
+            {/* <span onClick={()=> navigate("/aboutus") }>Assets</span> */}
+            <span>
+              <Link to="/aboutus" component="span">
+                Assets
+              </Link>
+            </span>
           </div>
           <div class="nav-button">
             <i class="fas fa-thumbtack"></i>
@@ -57,7 +81,7 @@ const Sidebar = () => {
           <div id="nav-footer-heading">
             <div id="nav-footer-avatar">
               <img
-                src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547"
+                src={profile}
                 alt="Avatar"
               />
             </div>
@@ -67,7 +91,7 @@ const Sidebar = () => {
                 href="https://codepen.io/uahnbu/pens/public"
                 target="_blank"
               >
-                uahnbu
+                Aryan
               </a>
               <span id="nav-footer-subtitle">Admin</span>
             </div>

@@ -3,13 +3,32 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from './Componants/Pages/Home/Home';
+import AboutUs from './Componants/Pages/AboutUs/AboutUs';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import gsapLoader from './gsapLoader';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const router = createBrowserRouter([
+  {
+      path: "/",
+      element: <App />,
+      children: [
+          {
+              element: <Home />,
+              path: "/",
+              loader: gsapLoader
+          },
+          {
+              element: <AboutUs />,
+              path: "/aboutus",
+              loader: gsapLoader
+          }
+      ]
+  }
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router={router} />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
