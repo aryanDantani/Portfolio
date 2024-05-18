@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+$primary-color: rebeccapurple;
+$easing: all 0.5s cubic-bezier(.55,0,.1,1);
+$base-size: 20rem;
+
+.badge {
+  display: block;
+  position: relative;
+  width: $base-size;
+  height: $base-size;
+  cursor: pointer;
+  background: url(https://source.unsplash.com/random/1000x1000) no-repeat 100% 50%;
+  background-size: 120%;
+  border-radius: 50%;
+  transition: $easing;
+  box-shadow: 0px .5rem 1rem rgba(0,0,0,.75);
+
+  &:hover {
+    box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
+    background-position: 0% 50%;
+
+    .text {
+      transform: rotate(-45deg) translate(0px) rotate(-315deg);
+      background: rgba($primary-color,.5);
+      width: $base-size;
+      letter-spacing: 1rem;
+      line-height: $base-size;
+      height: $base-size;
+      margin-top: -($base-size / 2);
+      margin-left: -($base-size / 2);
+      transition:
+        $easing,
+        letter-spacing 1.5s ease-out;
+    }
+  }
+
+  .text {
+    display: block;
+    position: absolute;
+    width: ($base-size / 2);
+    height: ($base-size / 2);
+    line-height: ($base-size / 2);
+    left: 50%;
+    top: 50%;
+    margin-top: -($base-size / 4);
+    margin-left: -($base-size / 4);
+    font-size: 2rem;
+    font-family: Raleway, sans-serif;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background: $primary-color;
+    transform: rotate(-180deg) translate(-($base-size / 2)) rotate(180deg);
+    box-shadow: 0px .5rem 1rem rgba(0,0,0,.5);
+    transition: $easing;
+  }
+}
