@@ -41,7 +41,6 @@ const Sidebar = () => {
           </div>
           <div class="nav-button">
             <i class="fas fa-images"></i>
-            {/* <span onClick={()=> navigate("/aboutus") }>Assets</span> */}
             <span>
               <Link to="/aboutus" component="span">
                 Assets
