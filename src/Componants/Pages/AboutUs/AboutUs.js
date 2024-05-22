@@ -4,7 +4,7 @@ import "./aboutus.scss";
 const AboutUs = () => {
   return (
     <div>
-      <h3>Tech-Skills & Tools</h3>
+      <h1 class="animated-text">Tech-Skills & Tools</h1>
       <section class="skills">
         <div class="container">
           <div class="skills-flex-container">
@@ -98,6 +98,51 @@ const AboutUs = () => {
                 />
               </div>
               <div class="title">Blender</div>
+            </div>
+            <div class="box">
+              <div class="image">
+                <img
+                  src="https://static-00.iconduck.com/assets.00/react-icon-1024x911-i0fogb95.png"
+                  alt="React"
+                />
+              </div>
+              <div class="title">React</div>
+            </div>
+            <div class="box">
+              <div class="image">
+                <img
+                  src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png"
+                  alt="Redux"
+                />
+              </div>
+              <div class="title">Redux</div>
+            </div>
+            <div class="box">
+              <div class="image">
+                <img
+                  src="https://logowik.com/content/uploads/images/nextjs7685.logowik.com.webp"
+                  alt="Next"
+                />
+              </div>
+              <div class="title">Next.js</div>
+            </div>
+            <div class="box">
+              <div class="image">
+                <img
+                  src="https://static-00.iconduck.com/assets.00/nodejs-icon-2048x2048-rueyo8fw.png"
+                  alt="Node"
+                />
+              </div>
+              <div class="title">Node.js</div>
+            </div>
+            <div class="box">
+              <div class="image">
+                <img
+                  src="https://static-00.iconduck.com/assets.00/nestjs-icon-512x510-9nvpcyc3.png"
+                  alt="Nest"
+                />
+              </div>
+              <div class="title">Nest.js</div>
             </div>
           </div>
         </div>

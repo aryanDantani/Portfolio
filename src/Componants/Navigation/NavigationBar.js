@@ -1,99 +1,110 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import "./navigations.scss";
-const NavigationBar = () => {
-  const ref = useRef(null);
-  const [numbers, setNumbers] = useState([]);
 
-  useEffect(() => {
-    setInterval(
-      () => setNumbers((current) => [...current, Math.random()]),
-      1500
-    );
-  }, []);
-
-  const handleClick = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
+const NavigationsSec = () => {
+  const location = useLocation();
 
   return (
-    <div class="main-app">
-      <div class="sidebar">
-        <nav class="main-nav">
-          <ul class="main-menu">
-            <li
-              class="menu-item"
-            >
-              <a href="/home" class="menu-a">
-                <div class="menu-txt-hld">
-                  <i class="fas fa-igloo menu-icon"></i>
-                  <span class="menu-txt">Home</span>
-                </div>
-              </a>
-            </li>
-            <li
-              class="menu-item"
-              
-            >
-              <a class="menu-a" onClick={() => handleClick()}>
-                <div class="menu-txt-hld">
-                  <i class="fas fa-bell menu-icon"></i>
-                  <span class="menu-txt">About Us</span>
-                </div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="#" class="menu-a">
-                <div class="menu-txt-hld">
-                  <i class="fas fa-envelope menu-icon"></i>
-                  <span class="menu-txt">Messages</span>
-                </div>
-              </a>
-            </li>
-            <li
-              class="menu-item"
-            >
-              <a href="/profile" class="menu-a">
-                <div class="menu-txt-hld">
-                  <i class="fas fa-user-circle menu-icon"></i>
-                  <span class="menu-txt">My profile</span>
-                </div>
-              </a>
-            </li>
-
-            <div class="sol-media">
-              <li class="menu-item">
-                <a href="https://github.com/" class="menu-a">
-                  <div class="menu-txt-hld">
-                    <i class="fa-brands fa-github"></i>
-                    <span class="menu-txt">Git</span>
-                  </div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a
-                  href="https://www.linkedin.com/?trk=content-hub-home-page_nav-header-logo"
-                  class="menu-a"
-                >
-                  <div class="menu-txt-hld">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span class="menu-txt">Linkdin</span>
-                  </div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="https://www.instagram.com/" class="menu-a">
-                  <div class="menu-txt-hld">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span class="menu-txt">Instagram</span>
-                  </div>
-                </a>
-              </li>
-            </div>
-          </ul>
-        </nav>
+    <nav class="navbar">
+      <ul class="navbar__menu">
+        <li
+          class={
+            location.pathname.includes("/home")
+              ? "navbar__select"
+              : "navbar__item"
+          }
+        >
+          <a href="/home" class="navbar__link">
+            <i class="fa-solid fa-house" />
+            <span>Home</span>
+          </a>
+        </li>
+        <li
+          class={
+            location.pathname.includes("/message")
+              ? "navbar__select"
+              : "navbar__item"
+          }
+        >
+          <a href="/message" class="navbar__link">
+            <i class="fa-solid fa-message" />
+            <span>Messages</span>
+          </a>
+        </li>
+        <li
+          class={
+            location.pathname.includes("/customers")
+              ? "navbar__select"
+              : "navbar__item"
+          }
+        >
+          <a href="/customer" class="navbar__link">
+            <i class="fa-solid fa-people-group" />
+            <span>Customers</span>
+          </a>
+        </li>
+        <li
+          class={
+            location.pathname.includes("/project")
+              ? "navbar__select"
+              : "navbar__item"
+          }
+        >
+          <a href="/project" class="navbar__link">
+            <i class="fa-solid fa-passport" />
+            <span>Projects</span>
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">
+            <i class="fa-solid fa-wrench" />
+            <span>Resources</span>
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">
+            <i class="fa-solid fa-handshake-angle" />
+            <span>Help</span>
+          </a>
+        </li>
+        <li
+          class={
+            location.pathname.includes("/settings")
+              ? "navbar__select"
+              : "navbar__item"
+          }
+        >
+          <a href="/settings" class="navbar__link">
+            <i class="fa-solid fa-gears" />
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+      <div class="pr-section">
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="#" class="navbar__link">
+              <i class="fa-brands fa-github" />
+              <span>Github</span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a href="#" class="navbar__link">
+              <i class="fa-brands fa-linkedin" />
+              <span>Linkdin</span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a href="#" class="navbar__link">
+              <i class="fa-brands fa-instagram" />
+              <span>Instagram</span>
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
-export default NavigationBar;
+export default NavigationsSec;
