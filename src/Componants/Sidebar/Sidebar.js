@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./sidebar.scss";
 import { Link, useLocation, useNavigation } from "react-router-dom";
-import  profile  from "../Images/Profile.jpeg"
+import profile from "../Images/Profile.jpeg";
 import gsap from "gsap";
 
 const Sidebar = () => {
@@ -31,23 +31,23 @@ const Sidebar = () => {
           <hr />
         </div>
         <div id="nav-content">
-          <div class="nav-button">
-            <i class="fas fa-palette"></i>
-            <span>
-              <Link to="/" component="span">
-                Your Work
-              </Link>
-            </span>
-          </div>
-          <div class="nav-button">
+          <Link class="nav-button" to="/" component="span">
+              <i class="fas fa-palette"></i>
+              <span>Your Work</span>
+          </Link>
+          <Link to="/aboutus" class="nav-button">
             <i class="fas fa-images"></i>
             <span>
-              <Link to="/aboutus" component="span">
                 Assets
-              </Link>
             </span>
-          </div>
-          <div class="nav-button">
+          </Link>
+          <Link to="/contactus" class="nav-button">
+            <i class="fas fa-images"></i>
+            <span>
+                Contact Us
+            </span>
+          </Link>
+          {/* <div class="nav-button">
             <i class="fas fa-thumbtack"></i>
             <span>Pinned Items</span>
           </div>
@@ -72,17 +72,14 @@ const Sidebar = () => {
           <div class="nav-button">
             <i class="fas fa-gem"></i>
             <span>Codepen Pro</span>
-          </div>
+          </div> */}
           <div id="nav-content-highlight"></div>
         </div>
         <input id="nav-footer-toggle" type="checkbox" />
         <div id="nav-footer">
           <div id="nav-footer-heading">
             <div id="nav-footer-avatar">
-              <img
-                src={profile}
-                alt="Avatar"
-              />
+              <img src={profile} alt="Avatar" />
             </div>
             <div id="nav-footer-titlebox">
               <a

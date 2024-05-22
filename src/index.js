@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './Componants/Pages/Home/Home';
+import ContactUs from "./Componants/ContactUs/ContactUs";
 import AboutUs from './Componants/Pages/AboutUs/AboutUs';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import gsapLoader from './gsapLoader';
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
               element: <AboutUs />,
               path: "/aboutus",
               loader: gsapLoader
-          }
+          },
+          {
+            element: <ContactUs />,
+            path: "/contactus",
+            loader: gsapLoader
+        }
       ]
   }
 ]);
