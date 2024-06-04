@@ -11,7 +11,6 @@ const LandingPage = () => {
 
   return (
     <div className='contact-us-main'>
-      {/* Your HTML markup here */}
       <div className="wrapper">
         <div className="letter">
           <div className="side">
