@@ -4,10 +4,13 @@ import './contact.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImages } from '@fortawesome/free-solid-svg-icons';
 const LandingPage = () => {
+
   const handleSendLetter = () => {
     document.body.classList.add("sent");
   };
+
   return (
+
     <div className='contact-us-main'>
       <div className="wrapper">
         <div className="letter">
@@ -26,6 +29,7 @@ const LandingPage = () => {
         <small className="centered result-message">Letter sent!</small>
       </div>
     </div>
+
   );
 };
 
